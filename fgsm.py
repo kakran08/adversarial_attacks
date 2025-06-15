@@ -24,7 +24,8 @@ def fgsm(model, loss_fn, images, labels, epsilon):
 def fgsm_attack(model, data_loader, loss_fn, epsilon = 0.1):
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
+    model = Model().to(device)
+    
     total_loss = 0
     correct = 0
 
